@@ -4,9 +4,6 @@ UNAME_ARCH := $(shell uname -m)
 BUF_VERSION ?= 1.0.0-rc8
 # Bufmak
 CACHE_BIN := bin
-# Update the $PATH so we can use buf directly
-export PATH := $(PATH):$(abspath $(CACHE_BIN))
-export GOBIN := $(abspath $(CACHE_BIN))
 
 .PHONY: buf/*
 
@@ -19,6 +16,4 @@ buf/install:
 
 .PHONY: buf/init
 buf/init:
-	@echo $(PATH)
-	@ls ./bin
 	@./bin/buf config init
