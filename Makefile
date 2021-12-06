@@ -28,5 +28,5 @@ buf/plugins:
 	done
 
 buf/generate:
-	@rm -rf gen proto/proto/go proto/github.com
+	@rm -rf proto/go
 	@./bin/buf generate --path proto/helloworld --template buf.template.yaml

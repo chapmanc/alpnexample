@@ -15,8 +15,10 @@ plugins:
       - paths=source_relative
       - require_unimplemented_servers=false
   - name: go-json
-    out: alpnexample/proto
-  - name: grpc-gateway
-    out: alpnexample/proto
+    out: proto/go
     opt:
+  - name: grpc-gateway
+    out: proto/go
+    opt:
+      - paths=source_relative
       - logtostderr=true
