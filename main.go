@@ -22,7 +22,7 @@ func main() {
 	}
 	certs := secure.GetCerts()
 	certPool := secure.NewCertPool(certs)
-	h2TLSConfig := secure.GetTlsConfig(certs, certPool, []string{"h2", "grpc"})
+	h2TLSConfig := secure.GetTlsConfig(certs, certPool, []string{"h2", "grpc", "foo"})
 	tlsLn := tls.NewListener(ln, h2TLSConfig)
 
 	mux := http.NewServeMux()
